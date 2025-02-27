@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypogene Exclusive Content</title>
+    <script>
+        //
+        const firstURL = "https://www.dropbox.com/scl/fi/vrcadrf99lkyv5jxjmq71/3-Draft-Example.mp3?rlkey=y22y7lv1sxf4a6rd4iowbq90j&st=rkxj5bbd&dl=1"; // 
+        const secondURL = "https://music.youtube.com/watch?v=rvznXNyH77Y&si=l_qa1G4Fz-6eUX4B"; //
+        const maxClicks = 1; // 
+
+        // 
+        let clickCount = localStorage.getItem("redirectClicks");
+
+        // 
+        if (!clickCount) {
+            clickCount = 0;
+        } else {
+            clickCount = parseInt(clickCount);
+        }
+
+        // 
+        if (clickCount < maxClicks) {
+            localStorage.setItem("redirectClicks", clickCount + 1);
+            window.location.href = firstURL;
+        } else {
+            // 
+            window.location.href = secondURL;
+        }
+    </script>
+</head>
+<body>
+    <p>Mengarahkan...</p>
+</body>
+</html>
